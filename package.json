@@ -13,12 +13,12 @@
     "medusa"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json && npm run build:admin",
+    "build": "tsc -p tsconfig.json && pnpm run build:admin",
     "build:admin": "medusa-admin build --deployment",
     "watch": "tsc --watch",
     "test": "jest",
     "seed": "medusa seed -f ./data/seed.json",
-    "render:build":"npm run build && medusa migrations run",
+    "render:build":"pnpm install && pnpm run build && medusa migrations run",
     "start": "npm run build && medusa start",
     "start:custom": "npm run build && node --preserve-symlinks --trace-warnings index.js",
     "dev": "npm run build:server && medusa develop"
