@@ -13,9 +13,7 @@
     "medusa"
   ],
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf dist",
-    "build": "npm run clean && npm run build:server && npm run build:admin",
-    "build:server": "npm run clean && tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && npm run build:admin",
     "build:admin": "medusa-admin build --deployment",
     "watch": "tsc --watch",
     "test": "jest",
